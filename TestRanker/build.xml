@@ -1,0 +1,38 @@
+<project name="HW3" default="all" basedir="./">
+
+  <path id="class.path">
+      <fileset dir="lib">
+          <include name="*.jar"/>
+      </fileset>
+  </path>
+
+  <target name="init">
+    <mkdir dir="classes"/>
+  </target>
+  
+  <target name="compile-jobs" depends="init">
+    <javac srcdir="src" destdir="classes" includes="**/*.java" deprecation="on"
+     debug="true" includeantruntime="false">
+       <classpath refid="class.path"/>
+       <compilerarg value="-Xlint"/>
+    </javac>
+  </target>
+
+  <target name="all" depends="compile-jobs"/>
+
+  <target name="make-jar" depends="compile-jobs">
+    <jar destfile="indexer.jar">
+      <fileset dir="src/" includes="**/*.class"/>
+    </jar>
+  </target>
+  
+  <target name="pack" description="Create an archive for submission">
+    <zip destfile="submit-hw3.zip">
+      <zipfileset dir="." includes="**/*.class, **/*.java"/>
+    </zip>
+  </target>
+  
+  <target name="clean">
+    <delete dir="classes"/>
+  </target>
+</project>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Spark_Jars">
+    <CLASSES>
+      <root url="file:///Library/spark-2.1.0-bin-hadoop2.7/jars" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file:///Library/spark-2.1.0-bin-hadoop2.7/jars" />
+    </SOURCES>
+    <jarDirectory url="file:///Library/spark-2.1.0-bin-hadoop2.7/jars" recursive="false" />
+    <jarDirectory url="file:///Library/spark-2.1.0-bin-hadoop2.7/jars" recursive="false" type="SOURCES" />
+  </library>
+</component>

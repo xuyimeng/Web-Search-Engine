@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+   http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <!-- mvn install:install-file -Dfile=/Library/spark-2.1.0-bin-hadoop2.7/jars/guava-14.0.1.jar -DgroupId=com.google -DartifactId=iterable -Dversion=1.0 -Dpackaging=jar -->
+   <!-- mvn install:install-file -Dfile=/Library/spark-2.1.0-bin-hadoop2.7/jars/scala-library-2.11.8.jar -DgroupId=com.scala -DartifactId=tuple2 -Dversion=1.0 -Dpackaging=jar -->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.upenn.cis555</groupId>
+	<artifactId>TestRanker</artifactId>
+	<name>Test Ranker</name>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+
+	<dependencies>
+		<!-- Spark dependency, no need to include -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.11</artifactId>
+			<version>2.1.0</version>
+			<!-- <scope>provided</scope> -->
+		</dependency>
+		<!-- Third-party libraries  -->
+		<dependency>
+			<groupId>com.google</groupId>
+			<artifactId>iterable</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.scala</groupId>
+			<artifactId>tuple2</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
